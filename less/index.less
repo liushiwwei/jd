@@ -1,0 +1,176 @@
+/* 在主页index.less中 去引入公共样式base.less */
+
+@import 'base.less';
+/* 头部区域样式 */
+
+#header {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0; // 如果元素和屏幕一样宽 或者 一样高  可以使用vw / vh单位
+    width: 100vw;
+    display: flex;
+    .icon-logo {
+        display: block;
+        width: 4rem;
+        height: 2.25rem;
+        padding: 0.5rem 0.55rem;
+        background-image: url(../images/sprites.png);
+        /* 注意按照北京图的原图宽高注意2来写 原图是400*400 设置为200*200 */
+        background-size: 10rem 10rem;
+        /* 北京图的定位也是要 除以2来写 0 216px  变成 -108px */
+        background-position: 0 -5.4rem;
+        /* 吊证背景图定位原点 参照盒模型的哪个区域 */
+        background-origin: content-box;
+        /* 设置背景图的裁切 裁切掉了  内容区域以外的北京图 */
+        background-clip: content-box;
+    }
+    form {
+        flex: 1;
+        padding-top: .25rem;
+        position: relative;
+        .icon-search {
+            position: absolute;
+            left: 0.35rem;
+            top: 0.6rem;
+            width: 1rem;
+            height: 1rem;
+            background-image: url(../images/sprites.png);
+            background-size: 10rem 10rem;
+            background-position: -14rem 0.2rem;
+        }
+        input {
+            width: 100%;
+            height: 1.75rem;
+            border-radius: 0.875rem;
+            padding-left: 1.5rem;
+        }
+    }
+    .login {
+        width: 2.25rem;
+        height: 2.25rem;
+        line-height: 2.25rem;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+/* 轮播图区域 */
+
+#slide {
+    img {
+        width: 100vw;
+    }
+}
+
+/* 导航条区域样式 */
+
+#nav {
+    padding: 0.5rem 0;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            width: 25vw;
+            a {
+                display: block;
+                text-align: center;
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                }
+                p {
+                    font-size: 0.7rem;
+                    margin: 0.2rem 0;
+                }
+            }
+        }
+    }
+}
+
+/* 主体商品区域 */
+
+#main {
+    padding: 0.5rem;
+    background-color: #eee;
+    .seckill {
+        background-color: #fff;
+        box-shadow: 0px 0px 0.25rem #666;
+        .title {
+            display: flex;
+            /* 设置两端对齐 */
+            justify-content: space-between;
+            line-height: 1.9rem;
+            .left {
+                display: flex;
+                >span {
+                    font-size: 0.9rem;
+                    color: @main-color;
+                }
+                >img {
+                    width: 1.35rem;
+                    height: 1.5rem;
+                    margin: 0.25rem;
+                }
+                .down-time {
+                    margin-left: 0.25rem;
+                    >span {
+                        font-size: 0.9rem;
+                        background-color: #fff;
+                        color: #000;
+                        &:not(:nth-child(3n)) {
+                            display: inline-block;
+                            color: #fff;
+                            background-color: #000;
+                            width: 0.75rem;
+                            height: 0.85rem;
+                            text-align: center;
+                            line-height: 0.85rem;
+                        }
+                    }
+                }
+            }
+            .more {
+                margin-right: 0.5rem;
+                font-size: 0.8rem;
+                color: #000;
+            }
+        }
+        .content {
+            ul {
+                padding-top: .4rem;
+                display: flex;
+                li {
+                    flex: 1;
+                    
+                    a {
+                        display: block;
+                        text-align: center;
+                        img {
+                            width: 5.5rem;
+                            height: 5.5rem;
+                        }
+                        p {
+                            font-size: 0.7rem;
+                            >span {
+                                color: @main-color;
+                                display: inline-block;
+                                padding-top: 0.5rem;
+                            }
+                            >del {
+                                color: #ccc;
+                                display: inline-block;
+                                margin-bottom: 0.6rem;
+                            }
+                        }
+                    }
+                    &~li {
+                        border-left: 2px solid #ccc;
+                        height: 8.5rem;
+                    }
+                }
+            }
+        }
+    }
+    
+}

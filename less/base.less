@@ -1,0 +1,61 @@
+/* 定义一些公共的全局变量 */
+@main-color:#de181b;
+
+* {
+    margin: 0;
+    padding: 0;
+    /* 在移动端给所有元素设置box-sizing:border-box; 让盒模型计算方式固定为 设置的宽高 不会被padding或者border影响 */
+    box-sizing: border-box;
+    /* 在移动端去除一些按住高亮的背景色 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* 禁止页面文字选择 ，此属性不继承，一般加在body上规定整个body的文字都不会自动调整 */
+    -webkit-user-select: none;
+    /* 禁止文字自动调整大小(默认情况下旋转设备的时候文字大小会发生变化)，此属性也不继承，一般加在body上规定整个body的文字都不会自动调整  */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-size: 14px;
+    font-family: '微软雅黑';
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    /* input内外边框都去掉 */
+    border: 0;
+    outline: 0;
+}
+
+img {
+    /* 设置图标标签对齐方式 中线对齐 解决图片距离块级元素3px间距 */
+    vertical-align: middle;
+}
+
+input,
+button {
+    /* 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式  */
+    -webkit-appearance: none;
+    /* 去掉IOS移除原生控件样式 */
+    -webkit-touch-callout: none;
+}
+
+/* 写一些公共的样式 */
+.bt{
+    border-top: 1px solid #ccc;
+}
+.bb{
+    border-bottom: 1px solid #ccc;
+}
+.bl{
+    border-left: 1px solid #ccc;
+}
+.br{
+    border-right: 1px solid #ccc;
+}
